@@ -1,0 +1,33 @@
+{
+    "songs": [{
+            "name": "Believer Mp3 Imagine Dragons Filmysongs.co",
+            "singer": "To the stars",
+            "file": "audio1.mp3"
+        },
+        {
+            "name": "DJ Snake   Taki Taki ",
+            "singer": "Snake",
+            "file": "audio.mp3"
+        },
+        {
+            "name": "Kgf ",
+            "singer": "Calum Scott",
+            "file": "audio3.mp3"
+        },
+        {
+            "name": "Krishna Flute ",
+            "singer": "Krishna ",
+            "file": "audio4.mp3"
+        },
+        {
+            "name": "The Avengers  ",
+            "singer": " Avengers  ",
+            "file": "audio5.mp3"
+        },
+        {
+            "name": "Ummon Hiyonat ",
+            "singer": "unknown",
+            "file": "audio6.mp3"
+        }
+    ]
+}

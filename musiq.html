@@ -1,0 +1,110 @@
+<html>
+
+<head>
+    <title></title>
+    <meta name="viewport" content="initial-scale=1.0">
+    <meta charset="utf-8">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+
+</head>
+
+<body>
+
+    <div class="main" style="margin-top: -230px; margin-left: 150px;">
+        <p>Music</p>
+        <img src="smart-watch.jpg">
+
+
+        <img id="image" src="mu.jpg">
+
+
+
+        <div class="icons">
+
+            <center>
+                <h1 id="song" style="margin-top:2em"></h1>
+                <h2 id="artist" style="margin-top:4em"></h2>
+                <a onclick="previoussong()" id="" class="fa fa-fast-backward" style="color: black;"></a>
+                <a onclick="playpause()" id="plps" class="fa fa-play" style="color: black;"></a>
+                <a onclick="nextsong()" id="" class="fa fa-fast-forward" style="color: black;"></a>
+                <audio id="music" src=""></audio>
+            </center>
+        </div>
+        <div class="icon" style="margin-top: -350px;margin-left: 390px;">
+            <a href="index.html"><i class="fa fa-home" aria-hidden="true" style="color: black;"></i>
+            </a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <a href="message.html"><i class="fa fa-envelope" aria-hidden="true" id="i1" style="color: black;"></i></i></a>
+            <a href="music.html"><i class="fa fa-music" aria-hidden="true" id="i2" style="color: black;"></i></i></a>
+            <a href="timer.html"><i class="fa fa-clock-o" aria-hidden="true" id="i3"style="color: black;"></i></i></i></a>
+        </div>
+
+
+
+
+        <script>
+            function display(value) {
+                console.log(vaue);
+                if (value.style.display === "none")
+                    value.style.display = "block";
+                else
+                    value.style.display = "none";
+
+            }
+
+            var music = "";
+            var index = 0;
+            var singer = "";
+            var songname = "";
+
+            var xhr = new XMLHttpRequest();
+
+            function playpause() {
+                var m = document.getElementById("plps");
+                var n = document.getElementById("music");
+                var o = document.getElementById("artist");
+                var s = document.getElementById("music");
+
+                xhr.onload = function() {
+
+                    responseObject = JSON.parse(xhr.responseText); //response text in one method of request ;to convert strings to objects
+                    music = responseObject.songs[index].file;
+                    singer = responseObject.songs[index].singer;
+                    songname = responseObject.songs[index].songname;
+                    // n += '<p><b>' + responseObject.details[i].Name + '</b><br>';
+                };
+
+                xhr.open('GET', 'data.json', true); //prepare the request
+                xhr.send(null); //send the request 3
+
+
+                if (m.className == "fa fa fa-play") {
+                    m.className = "fa fa-pause";
+                    n.src = music;
+
+                    n.play();
+                } else {
+                    m.className = "fa fa fa-play";
+                    n.pause();
+                }
+            }
+
+            function previoussong() {
+                var n = document.getElementById("music");
+                n.pause();
+                index--;
+                playpause();
+            }
+
+            function nextsong() {
+                var n = document.getElementById("music");
+                n.pause();
+                index++;
+                playpause();
+            }
+        </script>
+
+</body>

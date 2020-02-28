@@ -1,0 +1,71 @@
+#clock {
+    margin-left: 450px;
+    margin-top: -550px;
+}
+
+.icon {
+    margin-left: 420px;
+    margin-top: 100px;
+}
+
+#i2 {
+    margin-left: 50px;
+}
+
+#i3 {
+    margin-left: 50px;
+}
+
+button {
+    background-color: white;
+    border: none;
+}
+
+.button {
+    margin-left: 420px;
+    margin-top: -580px;
+}
+
+#start {
+    margin-left: 50px;
+}
+
+#stop {
+    margin-left: 50px;
+}
+
+#clear {
+    margin-left: 50px;
+}
+
+.table {
+    border: 1px solid white;
+    width: 280px;
+    height: 250px;
+    margin-left: 350px;
+    margin-top: -640px;
+    overflow-y: scroll;
+}
+
+.table::-webkit-scrollbar {
+    display: none;
+}
+
+#image {
+    margin-left: 350px;
+    margin-top: -640px;
+}
+
+#date {
+    margin-left: 456px;
+}
+
+.dd {
+    margin-left: 38%;
+}
+
+.icons {
+    position: absolute;
+    margin-left: 465px;
+    margin-top: -150px;
+}
